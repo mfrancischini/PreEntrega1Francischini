@@ -11,6 +11,7 @@ let sumaTotal = 0;
 alert("Bienvenido a Gala Shop")
 let nombre = prompt("Ingresa tu nombre:")
 console.log("Bienvenido:", nombre)
+console.log("%cEstos son los códigos de productos disponibles: 1 - 2 - 3 - 4", "background-color: #f1f1f1; color: #333; padding: 10px; border-radius: 5px;");
 let productoCantidad = 0
 let productoCodigo = 0
 
