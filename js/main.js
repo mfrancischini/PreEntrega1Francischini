@@ -9,14 +9,24 @@ const PRECIO_PROD_4 = 2359;
 let sumaTotal = 0;
 
 alert("Bienvenido a Gala Shop")
-let nombre = prompt("Ingresa tu nombre:")
-console.log("Bienvenido:", nombre)
+let nombre;
+
+do {
+    nombre = prompt("Ingresa tu nombre:");
+
+    if (nombre === null || nombre.trim() === "") {
+        console.log("No ingresaste un nombre válido. Por favor, intenta de nuevo.");
+    } else {
+        console.log("Bienvenido:", nombre);
+    }
+} while (nombre === null || nombre.trim() === "");
+
 console.log("%cEstos son los códigos de productos disponibles: 1 - 2 - 3 - 4", "background-color: #f1f1f1; color: #333; padding: 10px; border-radius: 5px;");
 let productoCantidad = 0
 let productoCodigo = 0
 
 function ingresarCodigoProducto() {
-    
+
     while (true) {
         productoCodigo = prompt("Ingresa por favor el código de producto que quieres agregar al carrito, 0 para terminar la compra")
 
@@ -40,7 +50,7 @@ function ingresarCantidadProducto() {
     let productoCantidad;
     do {
         productoCantidad = parseInt(prompt("Ingresa por favor la cantidad del producto:"));
-        
+
         if (isNaN(productoCantidad) || productoCantidad === null || productoCantidad === "") {
             alert("🔴 Valor incorrecto. Por favor, ingresa un valor numérico válido.");
         } else {
